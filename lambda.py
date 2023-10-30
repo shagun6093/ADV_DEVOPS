@@ -6,6 +6,19 @@ s3Client = boto3.client('s3')
 
 def lambda_handler(event, context):
    
+   print("Image Added")
+
+
+
+
+import json
+import boto3
+import csv
+import io
+s3Client = boto3.client('s3')
+
+def lambda_handler(event, context):
+   
    print(event)
    bucket = event['Record'][0]['s3']['bucket']['name']
    key=event['Record'][0]['s3']['object']['key']
